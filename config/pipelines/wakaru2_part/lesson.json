@@ -1,0 +1,1116 @@
+{
+  "schema_version": "2.0",
+  "theme": {
+    "uid": "2026-w45-shichi-go-san",
+    "level": "N5",
+    "name": "Shichi-go-san, la fête des enfants de 3, 5 et 7 ans",
+    "description": "Chaque année autour du 15 novembre, les sanctuaires japonais se remplissent de petits visiteurs très élégants : c'est le Shichi-go-san, littéralement « sept-cinq-trois ». Cette fête célèbre la croissance des enfants. Traditionnellement, elle concerne les filles de 3 et 7 ans et les garçons de 5 ans (parfois de 3 ans). On remercie les dieux de les avoir aidés à bien grandir et on prie pour leur santé future.\n\nLa date du 15 novembre est liée à une tradition de l'époque d'Edo : on raconte que le shogun Tokugawa Tsunayoshi aurait fait célébrer son fils un 15 novembre, en 1681. Les chiffres impairs sont aussi considérés comme porteurs de chance en Asie de l'Est.\n\nCe jour-là, les filles portent souvent un kimono aux couleurs vives, et les garçons un haori avec un hakama. Un prêtre shinto bénit chaque enfant dans le sanctuaire. On prend ensuite des photos devant le temple, dans l'air frais de l'automne.\n\nLe petit cadeau emblématique est le chitose ame, la « sucrerie des mille ans ». C'est un long bâtonnet rouge et blanc, glissé dans un sachet décoré de grues et de tortues, symboles de longue vie. Aujourd'hui, beaucoup de familles viennent un week-end d'octobre ou de novembre. Mais l'ambiance reste la même : douce, fière et pleine de sourires.",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Two_female_children_wearing_kimono_and_dress_at_Meiji_Shrine%2C_Japan%3B_November_2009.jpg/1280px-Two_female_children_wearing_kimono_and_dress_at_Meiji_Shrine%2C_Japan%3B_November_2009.jpg",
+    "image_credit": "ajari from Japan",
+    "image_licence": "CC BY 2.0"
+  },
+  "words": [
+    {
+      "role": "vocabulary",
+      "writing": "七五三",
+      "reading": "しちごさん",
+      "pos": "noun",
+      "translations": [
+        "Shichi-go-san",
+        "fête des enfants de 3, 5 et 7 ans"
+      ],
+      "description": "Nom de la fête des enfants célébrée vers le 15 novembre. Le mot vient des trois chiffres 7, 5 et 3. On célèbre la fête avec le verbe いわう et on la marque avec を : しちごさんを いわいます (On fête le Shichi-go-san). C'est un nom propre de fête, on ne le compte pas comme un nombre.",
+      "examples": [
+        {
+          "text": "しちごさんの 子どもは きものを きます。",
+          "translation": "Les enfants du Shichi-go-san portent un kimono."
+        }
+      ],
+      "composition": [
+        {
+          "text": "七",
+          "reading": "シチ",
+          "type": "on"
+        },
+        {
+          "text": "五",
+          "reading": "ゴ",
+          "type": "on"
+        },
+        {
+          "text": "三",
+          "reading": "サン",
+          "type": "on"
+        }
+      ]
+    },
+    {
+      "role": "vocabulary",
+      "writing": "神社",
+      "reading": "じんじゃ",
+      "pos": "noun",
+      "translations": [
+        "sanctuaire shinto",
+        "sanctuaire"
+      ],
+      "description": "Lieu de culte de la religion shinto, avec un portail (torii) à l'entrée. Ne le confonds pas avec le temple bouddhiste, qui se dit てら. Avec un verbe de mouvement, on dit じんじゃに いきます (Je vais au sanctuaire) ; pour une action sur place, on dit じんじゃで ... ます (faire quelque chose au sanctuaire).",
+      "examples": [
+        {
+          "text": "子どもは じんじゃで おまいりを します。",
+          "translation": "Les enfants font une prière au sanctuaire."
+        }
+      ],
+      "composition": [
+        {
+          "text": "神",
+          "reading": "ジン",
+          "type": "on"
+        },
+        {
+          "text": "社",
+          "reading": "ジャ",
+          "type": "on",
+          "rendaku": true
+        }
+      ]
+    },
+    {
+      "role": "vocabulary",
+      "writing": "着物",
+      "reading": "きもの",
+      "pos": "noun",
+      "translations": [
+        "kimono",
+        "vêtement traditionnel japonais"
+      ],
+      "description": "Vêtement traditionnel japonais. Avec le verbe きる, on dit きものを きます (porter un kimono). Le mot signifie à l'origine « chose que l'on porte », mais aujourd'hui il désigne surtout le kimono.",
+      "examples": [
+        {
+          "text": "かわいい きものが あります。",
+          "translation": "Il y a un joli kimono."
+        }
+      ],
+      "composition": [
+        {
+          "text": "着",
+          "reading": "き",
+          "type": "kun"
+        },
+        {
+          "text": "物",
+          "reading": "もの",
+          "type": "kun"
+        }
+      ]
+    },
+    {
+      "role": "vocabulary",
+      "writing": "千歳飴",
+      "reading": "ちとせあめ",
+      "pos": "noun",
+      "translations": [
+        "chitose ame",
+        "sucrerie des mille ans"
+      ],
+      "description": "Long bâtonnet de sucre rouge et blanc offert aux enfants pour le Shichi-go-san. Il symbolise une vie longue et en bonne santé. Le sachet est décoré de grues et de tortues. On le donne avec あげます : 子どもに ちとせあめを あげます (Je donne un chitose ame à l'enfant).",
+      "examples": [
+        {
+          "text": "子どもに ちとせあめを あげます。",
+          "translation": "Je donne un chitose ame à l'enfant."
+        }
+      ],
+      "composition": [
+        {
+          "text": "千歳",
+          "reading": "ちとせ",
+          "type": "jukujikun"
+        },
+        {
+          "text": "飴",
+          "reading": "あめ",
+          "type": "kun"
+        }
+      ]
+    },
+    {
+      "role": "vocabulary",
+      "writing": "着る",
+      "reading": "きる",
+      "pos": "verb_ichidan",
+      "translations": [
+        "porter (un vêtement)",
+        "mettre"
+      ],
+      "description": "Verbe du groupe 2 : on retire る et on ajoute ます (きます). Il s'emploie pour les vêtements du haut ou d'une seule pièce, comme le kimono. Le vêtement prend を : きものを きます (porter un kimono). Pour les chaussures ou le pantalon, on utilise d'autres verbes.",
+      "examples": [
+        {
+          "text": "子どもは きものを きます。",
+          "translation": "L'enfant porte un kimono."
+        }
+      ],
+      "composition": [
+        {
+          "text": "着",
+          "reading": "き",
+          "type": "kun"
+        },
+        {
+          "text": "る",
+          "reading": "る",
+          "type": "kana"
+        }
+      ]
+    },
+    {
+      "role": "vocabulary",
+      "writing": "祝う",
+      "reading": "いわう",
+      "pos": "verb_godan",
+      "translations": [
+        "fêter",
+        "célébrer"
+      ],
+      "description": "Verbe du groupe 1. Forme polie : いわいます. On célèbre une fête ou un événement heureux, qui prend を : しちごさんを いわいます (On fête le Shichi-go-san). On l'emploie pour des occasions joyeuses, pas pour une simple soirée entre amis.",
+      "examples": [
+        {
+          "text": "しちごさんを いわいます。",
+          "translation": "On fête le Shichi-go-san."
+        }
+      ],
+      "composition": [
+        {
+          "text": "祝",
+          "reading": "いわ",
+          "type": "kun"
+        },
+        {
+          "text": "う",
+          "reading": "う",
+          "type": "kana"
+        }
+      ]
+    },
+    {
+      "role": "vocabulary",
+      "writing": "写真",
+      "reading": "しゃしん",
+      "pos": "noun",
+      "translations": [
+        "photo",
+        "photographie"
+      ],
+      "description": "Une photo ou une photographie. Le verbe qui va avec est とる, pas する : しゃしんを とります (prendre une photo). Les familles prennent souvent des photos devant le sanctuaire le jour du Shichi-go-san.",
+      "examples": [
+        {
+          "text": "しゃしんが あります。",
+          "translation": "Il y a une photo."
+        }
+      ],
+      "composition": [
+        {
+          "text": "写",
+          "reading": "シャ",
+          "type": "on"
+        },
+        {
+          "text": "真",
+          "reading": "シン",
+          "type": "on"
+        }
+      ]
+    },
+    {
+      "role": "vocabulary",
+      "writing": "撮る",
+      "reading": "とる",
+      "pos": "verb_godan",
+      "translations": [
+        "prendre (une photo)",
+        "photographier"
+      ],
+      "description": "Verbe du groupe 1. Forme polie : とります. Il s'emploie avec しゃしん ou une vidéo : しゃしんを とります (prendre une photo). Il existe d'autres verbes とる, par exemple pour « saisir » ; ici, il s'agit uniquement de prendre une photo.",
+      "examples": [
+        {
+          "text": "じんじゃで しゃしんを とります。",
+          "translation": "Je prends des photos au sanctuaire."
+        }
+      ],
+      "composition": [
+        {
+          "text": "撮",
+          "reading": "と",
+          "type": "kun"
+        },
+        {
+          "text": "る",
+          "reading": "る",
+          "type": "kana"
+        }
+      ]
+    },
+    {
+      "role": "vocabulary",
+      "writing": "かわいい",
+      "reading": "かわいい",
+      "pos": "i_adjective",
+      "translations": [
+        "mignon",
+        "adorable"
+      ],
+      "description": "Adjectif en い qui se dit des enfants, des animaux, des petits objets et des vêtements. Devant un nom, il reste tel quel : かわいい きもの (un joli kimono). En fin de phrase, on ajoute です : かわいいです (c'est mignon). Il est très courant et chaleureux.",
+      "examples": [
+        {
+          "text": "この 子は かわいいです。",
+          "translation": "Cet enfant est mignon."
+        }
+      ]
+    },
+    {
+      "role": "vocabulary",
+      "writing": "お参り",
+      "reading": "おまいり",
+      "pos": "noun",
+      "translations": [
+        "visite de prière",
+        "prière au sanctuaire"
+      ],
+      "description": "Visite faite dans un sanctuaire ou un temple pour prier. On dit おまいりを します (faire la prière). Le mot est poli grâce au préfixe お. Il s'emploie pour les endroits sacrés, pas pour une simple visite à un ami.",
+      "examples": [
+        {
+          "text": "じんじゃで おまいりを します。",
+          "translation": "Je fais une prière au sanctuaire."
+        }
+      ],
+      "composition": [
+        {
+          "text": "お",
+          "reading": "お",
+          "type": "kana"
+        },
+        {
+          "text": "参",
+          "reading": "まい",
+          "type": "kun"
+        },
+        {
+          "text": "り",
+          "reading": "り",
+          "type": "kana"
+        }
+      ]
+    },
+    {
+      "role": "kanji_example",
+      "writing": "子",
+      "reading": "こ",
+      "pos": "noun",
+      "translations": [
+        "enfant"
+      ],
+      "description": "Seul, ce mot s'emploie surtout avec この ou avec un mot qui le précède, par exemple この 子 (cet enfant).",
+      "examples": [
+        {
+          "text": "この 子は かわいいです。",
+          "translation": "Cet enfant est mignon."
+        }
+      ],
+      "composition": [
+        {
+          "text": "子",
+          "reading": "こ",
+          "type": "kun"
+        }
+      ]
+    },
+    {
+      "role": "kanji_example",
+      "writing": "子ども",
+      "reading": "こども",
+      "pos": "noun",
+      "translations": [
+        "enfant",
+        "enfants"
+      ],
+      "description": "Mot très courant. Il peut désigner un seul enfant ou plusieurs enfants ; c'est le contexte qui précise. Le kanji 子 se lit こ dans ce mot, et ども est écrit en kana.",
+      "examples": [
+        {
+          "text": "子どもは きものを きます。",
+          "translation": "L'enfant porte un kimono."
+        }
+      ],
+      "composition": [
+        {
+          "text": "子",
+          "reading": "こ",
+          "type": "kun"
+        },
+        {
+          "text": "ども",
+          "reading": "ども",
+          "type": "kana"
+        }
+      ]
+    },
+    {
+      "role": "support",
+      "writing": "は",
+      "reading": "は",
+      "pos": "particle",
+      "translations": [
+        "particule du thème"
+      ],
+      "description": "Écrite は mais prononcée « wa » quand c'est une particule."
+    },
+    {
+      "role": "support",
+      "writing": "を",
+      "reading": "を",
+      "pos": "particle",
+      "translations": [
+        "particule de l'objet direct"
+      ],
+      "description": "Prononcée « o ». Elle marque ce sur quoi porte l'action."
+    },
+    {
+      "role": "support",
+      "writing": "に",
+      "reading": "に",
+      "pos": "particle",
+      "translations": [
+        "à, vers (cible, destination)",
+        "à (destinataire)",
+        "à, dans (lieu d'existence)"
+      ],
+      "description": "Particule de la leçon : elle marque la cible d'une action ou le lieu où se trouve une chose."
+    },
+    {
+      "role": "support",
+      "writing": "で",
+      "reading": "で",
+      "pos": "particle",
+      "translations": [
+        "à, dans (lieu de l'action)",
+        "avec (outil)"
+      ],
+      "description": "Marque le lieu où l'on fait l'action."
+    },
+    {
+      "role": "support",
+      "writing": "と",
+      "reading": "と",
+      "pos": "particle",
+      "translations": [
+        "avec (accompagnateur)",
+        "et"
+      ],
+      "description": "Marque la personne avec qui l'on fait l'action."
+    },
+    {
+      "role": "support",
+      "writing": "が",
+      "reading": "が",
+      "pos": "particle",
+      "translations": [
+        "particule du sujet"
+      ],
+      "description": "Marque le sujet, par exemple avec あります."
+    },
+    {
+      "role": "support",
+      "writing": "の",
+      "reading": "の",
+      "pos": "particle",
+      "translations": [
+        "de (complément du nom)"
+      ],
+      "description": "Relie deux noms : le premier précise le second."
+    },
+    {
+      "role": "support",
+      "writing": "です",
+      "reading": "です",
+      "pos": "copula",
+      "translations": [
+        "être (forme polie)"
+      ],
+      "description": "Termine une phrase polie avec un nom ou un adjectif."
+    },
+    {
+      "role": "support",
+      "writing": "この",
+      "reading": "この",
+      "pos": "demonstrative",
+      "translations": [
+        "ce, cet, cette"
+      ],
+      "description": "Se place devant un nom pour désigner quelqu'un ou quelque chose de proche : この 子."
+    },
+    {
+      "role": "support",
+      "writing": "行く",
+      "reading": "いく",
+      "pos": "verb_godan",
+      "translations": [
+        "aller"
+      ],
+      "description": "Verbe du groupe 1. Forme polie : いきます. La destination prend に : じんじゃに いきます.",
+      "composition": [
+        {
+          "text": "行",
+          "reading": "い",
+          "type": "kun"
+        },
+        {
+          "text": "く",
+          "reading": "く",
+          "type": "kana"
+        }
+      ]
+    },
+    {
+      "role": "support",
+      "writing": "する",
+      "reading": "する",
+      "pos": "verb_irregular",
+      "translations": [
+        "faire"
+      ],
+      "description": "Verbe irrégulier. Forme polie : します. Avec おまいり, on dit おまいりを します."
+    },
+    {
+      "role": "support",
+      "writing": "あげる",
+      "reading": "あげる",
+      "pos": "verb_ichidan",
+      "translations": [
+        "donner"
+      ],
+      "description": "Verbe du groupe 2. Forme polie : あげます. La personne qui reçoit prend に."
+    },
+    {
+      "role": "support",
+      "writing": "ある",
+      "reading": "ある",
+      "pos": "verb_godan",
+      "translations": [
+        "il y a",
+        "exister (choses)"
+      ],
+      "description": "Verbe du groupe 1 pour les choses. Forme polie : あります. Le lieu prend に, la chose prend が."
+    },
+    {
+      "role": "support",
+      "writing": "おいしい",
+      "reading": "おいしい",
+      "pos": "i_adjective",
+      "translations": [
+        "délicieux",
+        "bon (goût)"
+      ],
+      "description": "Adjectif en い qui se dit d'un goût ou d'un plat."
+    }
+  ],
+  "kanji": {
+    "char": "子",
+    "readings": {
+      "on": [
+        "シ",
+        "ス"
+      ],
+      "kun": [
+        "-こ"
+      ]
+    },
+    "description": "Ce kanji représente un petit enfant avec une grosse tête et des bras écartés. Imagine un enfant qui tend les bras pour attraper un chitose ame.",
+    "translations": [
+      "enfant"
+    ],
+    "strokes": 3,
+    "radical": "子",
+    "jlpt": "N5",
+    "grade": 1,
+    "unicode": "U+5B50"
+  },
+  "grammar": {
+    "uid": "g_particule_ni",
+    "name": "La particule に : destination, destinataire et lieu d'existence",
+    "category": "particles",
+    "description": "La particule に marque la cible d'une action : l'endroit où l'on va, la personne qui reçoit quelque chose, ou le lieu où se trouve une chose.\n\nSchémas :\n1. Lieu + に + いきます (aller à)\n2. Personne + に + Chose + を + あげます (donner à)\n3. Lieu + に + Chose + が + あります (il y a ... à cet endroit)\n\nExemples :\n- 子どもは じんじゃに いきます。 : Les enfants vont au sanctuaire.\n- 子どもに ちとせあめを あげます。 : Je donne un chitose ame à l'enfant.\n- じんじゃに ちとせあめが あります。 : Il y a du chitose ame au sanctuaire.\n\nComparaison avec les notions voisines :\n- に : le but ou le point d'arrivée (じんじゃに いきます : Je vais au sanctuaire).\n- で : le lieu où l'on fait une action (じんじゃで しゃしんを とります : Je prends des photos au sanctuaire).\n- を : l'objet direct de l'action (しちごさんを いわいます : On fête le Shichi-go-san).\n- は : le thème de la phrase (ちとせあめは おいしいです : Le chitose ame est délicieux).\n\nPièges courants :\n1. Pour une action qui se passe sur place (prendre une photo, prier), on utilise で, jamais に.\n2. Avec いきます, la destination prend に, pas を : on dit じんじゃに いきます (Je vais au sanctuaire).\n3. Les mots de temps relatifs comme きょう ou あした ne prennent jamais に.\n4. Ne confonds pas に (celui qui reçoit) et が (celui qui fait) : 子どもに あげます (je donne à l'enfant) n'est pas 子どもが あげます (l'enfant donne)."
+  },
+  "sentences": [
+    {
+      "text": "子どもは じんじゃに いきます。",
+      "translation": "Les enfants vont au sanctuaire.",
+      "tokens": [
+        {
+          "text": "子ども",
+          "reading": "こども",
+          "role": "topic",
+          "word_uid": "子ども:こども"
+        },
+        {
+          "text": "は",
+          "word_uid": "は:は"
+        },
+        {
+          "text": "じんじゃ",
+          "role": "destination",
+          "word_uid": "神社:じんじゃ"
+        },
+        {
+          "text": "に",
+          "word_uid": "に:に"
+        },
+        {
+          "text": "いきます",
+          "role": "predicate",
+          "lemma": "いく",
+          "word_uid": "行く:いく"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "text": "この 子は かわいい きものを きます。",
+      "translation": "Cet enfant porte un joli kimono.",
+      "tokens": [
+        {
+          "text": "この",
+          "role": "modifier",
+          "word_uid": "この:この"
+        },
+        {
+          "text": "子",
+          "reading": "こ",
+          "role": "topic",
+          "word_uid": "子:こ"
+        },
+        {
+          "text": "は",
+          "word_uid": "は:は"
+        },
+        {
+          "text": "かわいい",
+          "role": "modifier",
+          "word_uid": "かわいい:かわいい"
+        },
+        {
+          "text": "きもの",
+          "role": "object",
+          "word_uid": "着物:きもの"
+        },
+        {
+          "text": "を",
+          "word_uid": "を:を"
+        },
+        {
+          "text": "きます",
+          "role": "predicate",
+          "lemma": "きる",
+          "word_uid": "着る:きる"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "text": "子どもと じんじゃに いきます。",
+      "translation": "Je vais au sanctuaire avec l'enfant.",
+      "tokens": [
+        {
+          "text": "子ども",
+          "reading": "こども",
+          "role": "companion",
+          "word_uid": "子ども:こども"
+        },
+        {
+          "text": "と",
+          "word_uid": "と:と"
+        },
+        {
+          "text": "じんじゃ",
+          "role": "destination",
+          "word_uid": "神社:じんじゃ"
+        },
+        {
+          "text": "に",
+          "word_uid": "に:に"
+        },
+        {
+          "text": "いきます",
+          "role": "predicate",
+          "lemma": "いく",
+          "word_uid": "行く:いく"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "text": "じんじゃで しゃしんを とります。",
+      "translation": "Je prends des photos au sanctuaire.",
+      "tokens": [
+        {
+          "text": "じんじゃ",
+          "role": "place",
+          "word_uid": "神社:じんじゃ"
+        },
+        {
+          "text": "で",
+          "word_uid": "で:で"
+        },
+        {
+          "text": "しゃしん",
+          "role": "object",
+          "word_uid": "写真:しゃしん"
+        },
+        {
+          "text": "を",
+          "word_uid": "を:を"
+        },
+        {
+          "text": "とります",
+          "role": "predicate",
+          "lemma": "とる",
+          "word_uid": "撮る:とる"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "text": "子どもに ちとせあめを あげます。",
+      "translation": "Je donne un chitose ame à l'enfant.",
+      "tokens": [
+        {
+          "text": "子ども",
+          "reading": "こども",
+          "role": "recipient",
+          "word_uid": "子ども:こども"
+        },
+        {
+          "text": "に",
+          "word_uid": "に:に"
+        },
+        {
+          "text": "ちとせあめ",
+          "role": "object",
+          "word_uid": "千歳飴:ちとせあめ"
+        },
+        {
+          "text": "を",
+          "word_uid": "を:を"
+        },
+        {
+          "text": "あげます",
+          "role": "predicate",
+          "lemma": "あげる",
+          "word_uid": "あげる:あげる"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "text": "じんじゃで おまいりを します。",
+      "translation": "Je fais une prière au sanctuaire.",
+      "tokens": [
+        {
+          "text": "じんじゃ",
+          "role": "place",
+          "word_uid": "神社:じんじゃ"
+        },
+        {
+          "text": "で",
+          "word_uid": "で:で"
+        },
+        {
+          "text": "おまいり",
+          "role": "object",
+          "word_uid": "お参り:おまいり"
+        },
+        {
+          "text": "を",
+          "word_uid": "を:を"
+        },
+        {
+          "text": "します",
+          "role": "predicate",
+          "lemma": "する",
+          "word_uid": "する:する"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "text": "しちごさんを いわいます。",
+      "translation": "On fête le Shichi-go-san.",
+      "tokens": [
+        {
+          "text": "しちごさん",
+          "role": "object",
+          "word_uid": "七五三:しちごさん"
+        },
+        {
+          "text": "を",
+          "word_uid": "を:を"
+        },
+        {
+          "text": "いわいます",
+          "role": "predicate",
+          "lemma": "いわう",
+          "word_uid": "祝う:いわう"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "text": "じんじゃに ちとせあめが あります。",
+      "translation": "Il y a du chitose ame au sanctuaire.",
+      "tokens": [
+        {
+          "text": "じんじゃ",
+          "role": "place",
+          "word_uid": "神社:じんじゃ"
+        },
+        {
+          "text": "に",
+          "word_uid": "に:に"
+        },
+        {
+          "text": "ちとせあめ",
+          "role": "subject",
+          "word_uid": "千歳飴:ちとせあめ"
+        },
+        {
+          "text": "が",
+          "word_uid": "が:が"
+        },
+        {
+          "text": "あります",
+          "role": "predicate",
+          "lemma": "ある",
+          "word_uid": "ある:ある"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "text": "ちとせあめは おいしいです。",
+      "translation": "Le chitose ame est délicieux.",
+      "tokens": [
+        {
+          "text": "ちとせあめ",
+          "role": "topic",
+          "word_uid": "千歳飴:ちとせあめ"
+        },
+        {
+          "text": "は",
+          "word_uid": "は:は"
+        },
+        {
+          "text": "おいしい",
+          "role": "predicate",
+          "word_uid": "おいしい:おいしい"
+        },
+        {
+          "text": "です",
+          "word_uid": "です:です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "text": "しちごさんの 子どもは かわいいです。",
+      "translation": "Les enfants du Shichi-go-san sont mignons.",
+      "tokens": [
+        {
+          "text": "しちごさん",
+          "role": "possessor",
+          "word_uid": "七五三:しちごさん"
+        },
+        {
+          "text": "の",
+          "word_uid": "の:の"
+        },
+        {
+          "text": "子ども",
+          "reading": "こども",
+          "role": "topic",
+          "word_uid": "子ども:こども"
+        },
+        {
+          "text": "は",
+          "word_uid": "は:は"
+        },
+        {
+          "text": "かわいい",
+          "role": "predicate",
+          "word_uid": "かわいい:かわいい"
+        },
+        {
+          "text": "です",
+          "word_uid": "です:です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "category": "particles",
+      "type": "fill",
+      "name": "Choisis la bonne particule",
+      "instructions": "Complète chaque phrase avec la particule qui convient : destination, destinataire, lieu de l'action ou objet.",
+      "choices": [
+        "に",
+        "で",
+        "を",
+        "が"
+      ],
+      "items": [
+        {
+          "prompt": "子どもは じんじゃ{{1}} いきます。",
+          "translation": "Les enfants vont au sanctuaire.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "に"
+              ]
+            }
+          ],
+          "explanation": "Avec いきます, la destination se marque avec に."
+        },
+        {
+          "prompt": "じんじゃ{{1}} しゃしんを とります。",
+          "translation": "Je prends des photos au sanctuaire.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "で"
+              ]
+            }
+          ],
+          "explanation": "Prendre une photo est une action qui se passe sur place : le lieu de l'action prend で."
+        },
+        {
+          "prompt": "子ども{{1}} ちとせあめを あげます。",
+          "translation": "Je donne un chitose ame à l'enfant.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "に"
+              ]
+            }
+          ],
+          "explanation": "La personne qui reçoit se marque avec に ; avec が, ce serait l'enfant qui donnerait."
+        },
+        {
+          "prompt": "しちごさん{{1}} いわいます。",
+          "translation": "On fête le Shichi-go-san.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "を"
+              ]
+            }
+          ],
+          "explanation": "しちごさん est ce que l'on fête, c'est l'objet direct du verbe, donc を."
+        },
+        {
+          "prompt": "じんじゃ{{1}} おまいりを します。",
+          "translation": "Je fais une prière au sanctuaire.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "で"
+              ]
+            }
+          ],
+          "explanation": "Faire une prière est une action qui se passe sur place : le lieu prend で."
+        }
+      ]
+    },
+    {
+      "category": "vocabulary",
+      "type": "fill",
+      "name": "Trouve le bon mot",
+      "instructions": "Choisis le mot qui complète la phrase et qui correspond à la traduction.",
+      "choices": [
+        "じんじゃ",
+        "きもの",
+        "ちとせあめ",
+        "しゃしん",
+        "しちごさん"
+      ],
+      "items": [
+        {
+          "prompt": "子どもは {{1}}に いきます。",
+          "translation": "Les enfants vont au sanctuaire.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "じんじゃ"
+              ]
+            }
+          ],
+          "explanation": "Le mot qui désigne le lieu où l'on va est じんじゃ (sanctuaire)."
+        },
+        {
+          "prompt": "この 子は かわいい {{1}}を きます。",
+          "translation": "Cet enfant porte un joli kimono.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "きもの"
+              ]
+            }
+          ],
+          "explanation": "On porte un きもの avec le verbe きます."
+        },
+        {
+          "prompt": "子どもに {{1}}を あげます。",
+          "translation": "Je donne un chitose ame à l'enfant.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "ちとせあめ"
+              ]
+            }
+          ],
+          "explanation": "La traduction parle de la sucrerie offerte aux enfants : ちとせあめ."
+        },
+        {
+          "prompt": "じんじゃで {{1}}を とります。",
+          "translation": "Je prends des photos au sanctuaire.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "しゃしん"
+              ]
+            }
+          ],
+          "explanation": "Le verbe とります va avec しゃしん (photo)."
+        },
+        {
+          "prompt": "{{1}}を いわいます。",
+          "translation": "On fête le Shichi-go-san.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "しちごさん"
+              ]
+            }
+          ],
+          "explanation": "Ce que l'on fête dans la traduction est le Shichi-go-san : しちごさん."
+        }
+      ]
+    },
+    {
+      "category": "vocabulary",
+      "type": "fill",
+      "name": "Trouve le bon mot dans la phrase",
+      "instructions": "Choisis le mot qui complète la phrase et qui correspond à la traduction.",
+      "choices": [
+        "きます",
+        "とります",
+        "いわいます",
+        "かわいい",
+        "おまいり"
+      ],
+      "items": [
+        {
+          "prompt": "この 子は かわいい きものを {{1}}。",
+          "translation": "Cet enfant porte un joli kimono.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "きます"
+              ]
+            }
+          ],
+          "explanation": "On porte un vêtement avec le verbe きます (porter)."
+        },
+        {
+          "prompt": "じんじゃで しゃしんを {{1}}。",
+          "translation": "Je prends des photos au sanctuaire.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "とります"
+              ]
+            }
+          ],
+          "explanation": "Prendre une photo se dit しゃしんを とります (prendre une photo)."
+        },
+        {
+          "prompt": "しちごさんを {{1}}。",
+          "translation": "On fête le Shichi-go-san.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "いわいます"
+              ]
+            }
+          ],
+          "explanation": "Fêter une occasion heureuse se dit いわいます (fêter)."
+        },
+        {
+          "prompt": "しちごさんの 子どもは {{1}}です。",
+          "translation": "Les enfants du Shichi-go-san sont mignons.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "かわいい"
+              ]
+            }
+          ],
+          "explanation": "かわいい (mignon) est l'adjectif qui décrit les enfants ; il est suivi de です à la fin de la phrase."
+        },
+        {
+          "prompt": "じんじゃで {{1}}を します。",
+          "translation": "Je fais une prière au sanctuaire.",
+          "blanks": [
+            {
+              "key": 1,
+              "answers": [
+                "おまいり"
+              ]
+            }
+          ],
+          "explanation": "Faire une prière au sanctuaire se dit おまいりを します (faire une prière)."
+        }
+      ]
+    }
+  ]
+}

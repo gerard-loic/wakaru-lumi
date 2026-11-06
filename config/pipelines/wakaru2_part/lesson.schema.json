@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Leçon Wakaru",
+  "description": "Leçon de japonais (v2) : thème, mots (vocabulaire, mots en kanji, mots de support), kanji du jour, règle de grammaire, phrases d'exemple découpées en tokens et exercices.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "theme", "words", "kanji", "grammar", "sentences", "exercises"],
+  "properties": {
+    "schema_version": { "const": "2.0", "description": "Version du format de leçon." },
+    "theme": {
+      "description": "Thème de la leçon.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uid", "level", "name", "description", "image", "image_credit", "image_licence"],
+      "properties": {
+        "uid": { "type": "string", "pattern": "^[0-9]{4}-w[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*$", "description": "Identifiant unique : année, semaine et slug, ex. 2026-w43-momijigari." },
+        "level": { "$ref": "#/$defs/jlpt", "description": "Niveau JLPT visé par la leçon." },
+        "name": { "$ref": "#/$defs/texte", "description": "Nom du thème." },
+        "description": { "$ref": "#/$defs/texte", "description": "Texte de présentation du thème." },
+        "image": { "type": ["string", "null"], "minLength": 1, "description": "Image illustrant le thème (URL ou référence), null si aucune." },
+        "image_credit": { "type": ["string", "null"], "minLength": 1, "description": "Auteur de l'image à créditer, null si aucune image ou auteur inconnu." },
+        "image_licence": { "type": ["string", "null"], "minLength": 1, "description": "Licence de l'image (ex. CC BY-SA 4.0, Public domain), null si aucune image." }
+      }
+    },
+    "words": {
+      "description": "Mots de la leçon : vocabulaire étudié, exemples du kanji du jour et mots de support utilisés dans les phrases.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["role", "writing", "reading", "pos", "translations"],
+        "properties": {
+          "role": {
+            "enum": ["vocabulary", "kanji_example", "support"],
+            "description": "Rôle du mot : vocabulary (mot étudié), kanji_example (mot illustrant le kanji du jour), support (mot nécessaire aux phrases, non étudié)."
+          },
+          "writing": { "$ref": "#/$defs/texte", "description": "Écriture usuelle du mot." },
+          "reading": { "$ref": "#/$defs/texte", "description": "Lecture en hiragana." },
+          "taught_form": {
+            "enum": ["dictionary", "polite"],
+            "description": "Forme sous laquelle le mot apparaît dans la leçon (verbes)."
+          },
+          "pos": {
+            "enum": ["noun", "i_adjective", "na_adjective", "verb_godan", "verb_ichidan", "verb_irregular", "adverb", "particle", "copula", "counter", "conjunction", "prefix", "suffix", "interjection", "pronoun", "demonstrative", "numeral", "expression"],
+            "description": "Catégorie grammaticale."
+          },
+          "translations": { "$ref": "#/$defs/traductions" },
+          "description": { "$ref": "#/$defs/texte", "description": "Explication d'usage, nuances et pièges." },
+          "examples": {
+            "description": "Phrases d'exemple utilisant le mot.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["text", "translation"],
+              "properties": {
+                "text": { "$ref": "#/$defs/texte", "description": "Phrase en japonais." },
+                "translation": { "$ref": "#/$defs/texte", "description": "Traduction en français." }
+              }
+            }
+          },
+          "composition": {
+            "description": "Décomposition du mot par segment (kanji ou kana).",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["text", "reading", "type"],
+              "properties": {
+                "text": { "$ref": "#/$defs/texte", "description": "Segment du mot (kanji, groupe de kanji ou kana)." },
+                "reading": { "$ref": "#/$defs/texte", "description": "Lecture du segment dans ce mot (katakana pour on, hiragana sinon)." },
+                "type": {
+                  "enum": ["on", "kun", "jukujikun", "iteration", "kana", "ateji"],
+                  "description": "Type de lecture : on, kun, kana (okurigana ou kana seul), jukujikun (lecture du mot entier), iteration (signe 々), ateji (kanji choisis pour leur son)."
+                },
+                "rendaku": { "type": "boolean", "description": "Vrai si la lecture est sonorisée (rendaku)." }
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "role": { "const": "vocabulary" } } },
+            "then": { "required": ["description", "examples"] }
+          },
+          {
+            "if": { "properties": { "role": { "const": "kanji_example" } } },
+            "then": { "required": ["examples", "composition"] }
+          }
+        ]
+      }
+    },
+    "kanji": {
+      "description": "Kanji étudié dans la leçon.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["char", "readings", "description", "translations", "strokes", "radical", "jlpt", "grade", "unicode"],
+      "properties": {
+        "char": { "$ref": "#/$defs/caractere", "description": "Le kanji." },
+        "readings": {
+          "description": "Lectures du kanji.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["on", "kun"],
+          "properties": {
+            "on": { "type": "array", "items": { "$ref": "#/$defs/texte" }, "description": "Lectures on (katakana), liste vide si aucune." },
+            "kun": { "type": "array", "items": { "$ref": "#/$defs/texte" }, "description": "Lectures kun (hiragana), liste vide si aucune." }
+          }
+        },
+        "description": { "$ref": "#/$defs/texte", "description": "Explication du kanji (origine, forme)." },
+        "translations": { "$ref": "#/$defs/traductions" },
+        "strokes": { "type": "integer", "minimum": 1, "description": "Nombre de traits." },
+        "radical": { "$ref": "#/$defs/caractere", "description": "Radical du kanji." },
+        "jlpt": { "$ref": "#/$defs/jlpt", "description": "Niveau JLPT." },
+        "grade": { "type": "integer", "minimum": 1, "description": "Année scolaire japonaise (kyōiku/jōyō) d'apprentissage." },
+        "unicode": { "type": "string", "pattern": "^U\\+[0-9A-F]{4,5}$", "description": "Point de code Unicode, ex. U+5C71." }
+      }
+    },
+    "grammar": {
+      "description": "Règle de grammaire de la leçon.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uid", "name", "category", "description"],
+      "properties": {
+        "uid": { "type": "string", "pattern": "^g_[a-z0-9_]+$", "description": "Identifiant unique de la règle, ex. g_particule_de." },
+        "name": { "$ref": "#/$defs/texte", "description": "Nom de la règle." },
+        "category": {
+          "enum": ["particles", "verb_conjugation", "adjective_conjugation", "sentence_patterns", "questions", "demonstratives", "numbers_counters", "time_expressions", "conjunctions", "requests_invitations", "desire_ability", "comparison", "politeness", "vocabulary"],
+          "description": "Catégorie de grammaire."
+        },
+        "description": { "$ref": "#/$defs/texte", "description": "Explication, schéma, exemples et pièges courants." }
+      }
+    },
+    "sentences": {
+      "description": "Phrases d'exemple utilisant les mots de la leçon.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "translation", "tokens"],
+        "properties": {
+          "text": { "$ref": "#/$defs/texte", "description": "Phrase en japonais." },
+          "translation": { "$ref": "#/$defs/texte", "description": "Traduction en français." },
+          "tokens": {
+            "description": "Découpage de la phrase ; la concaténation des tokens (hors espaces) redonne la phrase.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["text"],
+              "properties": {
+                "text": { "$ref": "#/$defs/texte", "description": "Texte du token." },
+                "reading": { "$ref": "#/$defs/texte", "description": "Lecture en hiragana, si le token contient des kanji." },
+                "role": {
+                  "enum": ["topic", "place", "destination", "route", "object", "companion", "modifier", "predicate", "subject", "time", "instrument", "origin", "recipient", "possessor"],
+                  "description": "Fonction syntaxique du token ; absent pour les particules, la copule et la ponctuation."
+                },
+                "lemma": { "$ref": "#/$defs/texte", "description": "Forme dictionnaire, si le token est fléchi." },
+                "word_uid": { "type": "string", "pattern": "^[^:]+:[^:]+$", "description": "Identifiant du mot de \"words\" correspondant (écriture:lecture, ex. 紅葉:もみじ), calculé automatiquement ; absent pour la ponctuation." }
+              }
+            }
+          }
+        }
+      }
+    },
+    "exercises": {
+      "description": "Exercices de la leçon.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["category", "type", "name", "instructions", "items"],
+        "properties": {
+          "category": { "enum": ["particles", "vocabulary", "kanji", "conjugation", "grammar", "reading", "comprehension"], "description": "Catégorie de l'exercice." },
+          "type": { "enum": ["fill"], "description": "Type d'exercice : fill (texte à trous)." },
+          "name": { "$ref": "#/$defs/texte", "description": "Titre de l'exercice." },
+          "instructions": { "$ref": "#/$defs/texte", "description": "Consigne." },
+          "choices": {
+            "description": "Réponses proposées, communes à tous les items.",
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": { "$ref": "#/$defs/texte" }
+          },
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["prompt", "translation", "blanks", "explanation"],
+              "properties": {
+                "prompt": { "$ref": "#/$defs/texte", "description": "Phrase de l'exercice." },
+                "translation": { "$ref": "#/$defs/texte", "description": "Traduction en français." },
+                "blanks": {
+                  "description": "Réponses attendues pour chaque trou.",
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["key", "answers"],
+                    "properties": {
+                      "key": { "type": "integer", "minimum": 1, "description": "Numéro du trou ({{key}} dans prompt)." },
+                      "answers": {
+                        "description": "Réponses acceptées.",
+                        "type": "array",
+                        "minItems": 1,
+                        "items": { "$ref": "#/$defs/texte" }
+                      }
+                    }
+                  }
+                },
+                "explanation": { "$ref": "#/$defs/texte", "description": "Justification de la réponse." }
+              }
+            }
+          }
+        },
+        "if": { "properties": { "type": { "const": "fill" } } },
+        "then": {
+          "properties": {
+            "items": {
+              "items": {
+                "properties": {
+                  "prompt": { "pattern": "\\{\\{[0-9]+\\}\\}", "description": "Phrase contenant au moins un trou noté {{n}}." }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "texte": { "type": "string", "minLength": 1 },
+    "caractere": { "type": "string", "minLength": 1, "maxLength": 1 },
+    "jlpt": { "enum": ["N5", "N4", "N3", "N2", "N1"] },
+    "traductions": {
+      "description": "Traductions en français.",
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/texte" }
+    }
+  }
+}

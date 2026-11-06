@@ -1,0 +1,55 @@
+{
+    "name": "Wakaru - creation d'une leçon dans l'API",
+    "services": {
+        "wakaru": {
+            "login": "******************",
+            "password": "******************"
+        }
+    },
+    "trigger": [
+        {
+            "class": "Api",
+            "config": {}
+        },
+        {
+            "class" : "Cli",
+            "config": {}
+        }
+    ],
+    "blocks": {
+        "_root": {
+            "class": "TxtReader",
+            "config": {
+               "source" : "lesson.json",
+               "output": "lessontxt"
+            },
+            "on_success": "checkformat",
+            "on_error": "exit(0)"
+        },
+         "checkformat": {
+            "class": "JsonFormat",
+            "config": {
+                "input": "lessontxt",
+                "format_file": "lesson.schema.json",
+                "output": "lessonjson"
+            },
+            "on_success": "sendtowakaru",
+            "on_error": "exit(0)"
+        },
+        "sendtowakaru": {
+            "class": "ServiceMethod",
+            "config": {
+                "service": "wakaru",
+                "method": "call",
+                "params": {
+                    "method": "POST",
+                    "endpoint": "llm/createlesson",
+                    "input": "lessonjson",
+                    "output": "lessoncreated"
+                }
+            },
+            "on_success": "exit(1)",
+            "on_error": "exit(0)"
+        }
+    }
+}
