@@ -57,6 +57,38 @@
                 "output": "lessonjson"
             },
             "on_success": "checklesson",
+            "on_error": "jsonerror"
+        },
+        "jsonerror": {
+            "class": "PythonScript",
+            "config": {
+                "script": "jsonerror.py",
+                "params": {
+                    "input": "lessontxt",
+                    "output": "lessonjsonerror"
+                }
+            },
+            "on_success": "fixjson",
+            "on_error": "exit(0)"
+        },
+        "fixjson": {
+            "class": "Agent",
+            "config": {
+                "profile": "wakaru-v2-review",
+                "prompt": "Tâche : RÉPARATION\n\nErreur détectée :\n\n{lessonjsonerror}\n\nTexte à réparer :\n\n{lessontxt}",
+                "output": "lessontxt"
+            },
+            "on_success": "checkfixed",
+            "on_error": "exit(0)"
+        },
+        "checkfixed": {
+            "class": "JsonFormat",
+            "config": {
+                "input": "lessontxt",
+                "format_file": "lesson.schema.json",
+                "output": "lessonjson"
+            },
+            "on_success": "checklesson",
             "on_error": "exit(0)"
         },
         "checklesson": {
