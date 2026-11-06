@@ -1,0 +1,15 @@
+# Secrets et configuration locale
+config/config.json
+docker/.env
+
+# Documents sources du RAG
+config/source-rag/*
+!config/source-rag/.gitkeep
+
+# Données produites à l'exécution
+storage/*/*
+!storage/*/.gitkeep
+
+__pycache__
+.venv
+.claude/

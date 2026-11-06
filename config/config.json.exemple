@@ -1,0 +1,168 @@
+{
+    "app": {
+        "name": "Wakaru Lumi",
+        "description": "Agent IA pour Wakaru",
+        "allowed_cors_ips": ["*"],
+        "allowed_cors_methods": ["*"],
+        "allowed_cors_headers": ["*"],
+        "url": "https://**************.fr",
+        "ws_inactivity_timeout": 300,
+        "max_request_body_mb": 100,
+        "default_language": "fr",
+        "admin_users": [
+            { "username": "**************", "password": "**************" }
+        ]
+    },
+
+    "authentication": {
+        "service": "wakaru",
+        "jwt_secret": "**************",
+        "jwt_algorithm": "HS256",
+        "session_duration": 3600,
+        "max_auth_requests_minute": 10
+    },
+
+    "services": {
+        "wakaru": {
+            "handler": "Sylo",
+            "url": "https://**************.fr",
+            "timeout": 60,
+            "mcp": true
+        }
+    },
+
+    "logger": {
+        "output": { "enabled": true },
+        "file": { "enabled": true, "path": "storage/logs" }
+    },
+
+    "tavily" : {
+        "api_key" : "**************",
+        "search_depth" : "basic",
+        "max_searches_per_turn" : 3,
+        "max_extracts_per_turn" : 2,
+        "search_mode" : "retrieval",
+        "retrieval_collection" : "default",
+        "retrieval_top_k" : 20
+    },
+
+    "profiles": {
+        "wakaru-v2" : {
+            "llm" : {
+                "system_prompt_file": "config/systemprompt-wakaru-v2.md",
+                "connector": "LiteLLM",
+                "memory_messages": 5,
+                "empty_llm_response_max_retry": 3,
+                "followup_questions": {
+                    "enabled": false,
+                    "count": 1
+                },
+                "filters": {
+                },
+                "LiteLLM": {
+                    "model": "openai/anthropic-claude-sonnet-5.5",
+                    "api_base": "https://inference.do-ai.run/v1",
+                    "api_key": "**************"
+                }
+            },
+            "languages" : [
+                "fr"
+            ],
+            "mcp" : {
+                "max_tool_iterations": 20,
+                "tools_enabled": [
+                    "context.*",
+                    "tavily.*",
+                    "wikimediaimage.*",
+                    "ext.wakaru/ext__wakaru__list_theme",
+                    "ext.wakaru/ext__wakaru__search_theme",
+                    "ext.wakaru/ext__wakaru__list_kanji",
+                    "ext.wakaru/ext__wakaru__search_kanji",
+                    "ext.wakaru/ext__wakaru__list_word",
+                    "ext.wakaru/ext__wakaru__search_word"
+                ]
+            }
+        },
+        "wakaru-v2-review" : {
+            "llm" : {
+                "system_prompt_file": "config/systemprompt-wakaru-review-v2.md",
+                "connector": "LiteLLM",
+                "memory_messages": 0,
+                "empty_llm_response_max_retry": 3,
+                "followup_questions": {
+                    "enabled": false,
+                    "count": 1
+                },
+                "filters": {
+                },
+                "LiteLLM": {
+                    "model": "openai/anthropic-claude-sonnet-5.5",
+                    "api_base": "https://inference.do-ai.run/v1",
+                    "api_key": "**************"
+                }
+            },
+            "languages" : [
+                "fr"
+            ],
+            "mcp" : {
+                "max_tool_iterations": 1,
+                "tools_enabled": []
+            },
+            "connectors": {
+            },
+            "attachments": {
+                "enabled": false
+            }
+        }
+    },
+
+    "usage": {
+        "max_tokens_month": -1,
+        "max_requests_month": -1,
+        "max_requests_minute": 5
+    },
+
+    "directories": {
+        "temp_dir": "storage/temp",
+        "local_storage_dir": "storage/data",
+        "languages_dir": "static/languages",
+        "rag_storage_dir": "storage/rag",
+        "custom_languages_dir": "config/languages",
+        "custom_services_dir": "config/services",
+        "custom_mcp_tools_dir": "config/tools",
+        "custom_pipelines": "config/pipelines"
+    },
+
+    "rag": {
+        "collections": {
+            "default": {
+                "embedding_dim": 1024,
+                "chunk_size": 500,
+                "chunk_overlap": 50,
+                "connector": "PgVector",
+                "pgvector": {
+                    "table": "rag_documents"
+                },
+                "embedder": {
+                    "class": "LiteLLMEmbedder",
+                    "model": "openai/Qwen/Qwen3-Embedding-0.6B",
+                    "api_base": "https://ai.cloudeo.fr/v1",
+                    "api_key": "**************"
+                }
+            }
+        }
+    },
+
+    "cron": [
+        {
+            "task": "Shredding",
+            "time": {
+                "minute": 0,
+                "hour": "*"
+            },
+            "config": {
+                "log_max_days": 10
+            }
+        }
+    ]
+}

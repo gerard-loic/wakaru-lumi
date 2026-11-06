@@ -1,0 +1,23 @@
+services:
+  lumi:
+    container_name: '${COMPOSE_PROJECT_NAME}'
+    image: 'ghcr.io/gerard-loic/lumi:${COMPOSE_LUMI_VERSION}'
+    restart: ${COMPOSE_RESTART_POLICY}
+    # --proxy-headers : sans cela, tous les clients partagent l'IP de Traefik pour les limites de débit.
+    # forwarded-allow-ips=* suppose que le conteneur n'est joignable que par Traefik (aucun port publié).
+    command: ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001", "--proxy-headers", "--forwarded-allow-ips=*"]
+    volumes:
+      - '../config/:/app/config/:ro'
+      - '../storage/:/app/storage/'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik-network"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.rule=Host(`${COMPOSE_PROJECT_HOST}`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.entrypoints=${COMPOSE_TRAEFIK_ENTRYPOINT}"
+      - "traefik.http.services.${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=8001"
+    networks:
+      - traefik-network
+
+networks:
+  traefik-network:
+    external: true
