@@ -79,7 +79,9 @@
                     "ext.wakaru/ext__wakaru__list_kanji",
                     "ext.wakaru/ext__wakaru__search_kanji",
                     "ext.wakaru/ext__wakaru__list_word",
-                    "ext.wakaru/ext__wakaru__search_word"
+                    "ext.wakaru/ext__wakaru__search_word",
+                    "ext.wakaru/ext__wakaru__list_grammar_rule",
+                    "ext.wakaru/ext__wakaru__search_grammar_rule"
                 ]
             }
         },
