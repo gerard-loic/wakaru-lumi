@@ -31,6 +31,10 @@ vocabulary -> mot de vocabulaire
 kanji_example -> utilisation du kanji
 support -> mots de support
 
+- words[].taught_form :
+dictionary -> forme du dictionnaire (かう, みる)
+polite -> forme polie en ます (かいます, みました)
+
 - words[].pos :
 noun -> Nom commun ou propre
 i_adjective -> Adjectif en い, qui se conjugue directement
@@ -195,7 +199,7 @@ Tout le reste de la leçon (mots, kanji, phrases, exercices) doit être en rappo
 
 - Rôle "vocabulary" : exactement 10 mots en rapport avec le thème (noms, verbes, adjectifs, expressions), de niveau N5, absents des mots déjà enseignés (vérifié via le MCP), et réutilisés dans les phrases et les exercices. "writing" est la forme écrite usuelle du mot, même si elle contient un kanji hors N5 ou non encore étudié (公園, 弁当, 紅葉) ; les phrases l'écriront alors en kana. Un verbe porte "taught_form" pour indiquer la forme vue dans la leçon. "description" donne le sens précis du mot, ses nuances et subtilités d'usage (registre, contexte, particule associée, confusions possibles) ; elle s'adresse à l'élève : n'y ajoute jamais de remarque sur ta façon d'écrire ou sur les règles de la leçon. "examples" contient une phrase d'exemple de niveau N5 avec sa traduction, écrite avec la même règle de kanji que les phrases (ex : 山道を あるきます).
 - Rôle "kanji_example" : 10 mots au maximum utilisant le kanji de la leçon (dont le kanji seul s'il forme un mot), uniquement les plus courants et accessibles à un débutant. N'utilise que des mots dont les autres kanji sont eux aussi dans la liste N5 ci-dessous. Écris les répétitions avec 々 (山々 et non 山山). "description" est facultative : ajoute-la quand une lecture, un rendaku ou un sens particulier mérite d'être signalé. Chaque mot a un exemple dans "examples".
-- Rôle "support" : tous les autres mots utilisés dans les phrases et les exercices (verbes courants, particules, copule です, adverbes…). Ils ont "translations" et, si utile, une "description" courte (ex : は prononcé « wa » comme particule) ; ils n'ont pas d'"examples". Chaque particule employée dans une phrase ou proposée dans un "choices" a son entrée "support".
+- Rôle "support" : tous les autres mots utilisés dans les phrases et les exercices (verbes courants, particules, copule です, adverbes…). Ils ont "translations" et, si utile, une "description" courte (ex : は prononcé « wa » comme particule) ; ils n'ont pas d'"examples" (omets la clé, n'écris pas de liste vide). Chaque particule employée dans une phrase ou proposée dans un "choices" a son entrée "support".
 
 "composition" : décrit le mot segment par segment, dans l'ordre, de façon que la concaténation des "text" redonne exactement "writing" et celle des "reading" redonne exactement "reading". Un kanji est un segment "on" (lecture en katakana, ex : 公 コウ) ou "kun" (lecture en hiragana, ex : 寺 てら) ; un groupe de kana (okurigana, préfixe お) est un segment "kana" ; un mot à lecture spéciale qui ne se découpe pas kanji par kanji (紅葉 もみじ, 今日 きょう) est un seul segment "jukujikun" ; 々 est un segment "iteration" dont la lecture est celle qu'il prend dans le mot. Ajoute "rendaku" : true uniquement sur un segment dont la lecture est sonorisée (火山 : 山 ザン ; 友達 : 達 だち), et omets la clé sinon. Omets "composition" pour un mot écrit entièrement en kana (きれい, とても, particules).
 

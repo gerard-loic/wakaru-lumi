@@ -48,9 +48,8 @@
           "translations": { "$ref": "#/$defs/traductions" },
           "description": { "$ref": "#/$defs/texte", "description": "Explication d'usage, nuances et pièges." },
           "examples": {
-            "description": "Phrases d'exemple utilisant le mot.",
+            "description": "Phrases d'exemple utilisant le mot (au moins une pour vocabulary et kanji_example, liste vide tolérée pour support).",
             "type": "array",
-            "minItems": 1,
             "items": {
               "type": "object",
               "additionalProperties": false,
@@ -84,11 +83,11 @@
         "allOf": [
           {
             "if": { "properties": { "role": { "const": "vocabulary" } } },
-            "then": { "required": ["description", "examples"] }
+            "then": { "required": ["description", "examples"], "properties": { "examples": { "minItems": 1 } } }
           },
           {
             "if": { "properties": { "role": { "const": "kanji_example" } } },
-            "then": { "required": ["examples", "composition"] }
+            "then": { "required": ["examples", "composition"], "properties": { "examples": { "minItems": 1 } } }
           }
         ]
       }
