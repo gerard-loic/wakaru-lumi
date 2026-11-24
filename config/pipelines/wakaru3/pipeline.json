@@ -1,0 +1,210 @@
+{
+    "name": "Wakaru - creation d'une leçon (v2)",
+    "services": {
+        "wakaru": {
+            "login": "lumi@wakaru.fr",
+            "password": "0WAiIhL9ZhMUzeEp"
+        }
+    },
+    "trigger": [
+        {
+            "class": "Api",
+            "config": {}
+        }
+    ],
+    "blocks": {
+        "_root": {
+            "class": "PythonScript",
+            "config": {
+                "script": "preload.py",
+                "params": {
+                    "service": "wakaru",
+                    "themes_limit": 50,
+                    "kanji_limit": 100,
+                    "words_limit": 200,
+                    "themes": "knownthemes",
+                    "kanji": "knownkanji",
+                    "words": "knownwords",
+                    "grammar_limit": 200,
+                    "grammar": "knowngrammar"
+                }
+            },
+            "on_success": "generate",
+            "on_error": "exit(0)"
+        },
+        "generate": {
+            "class": "Agent",
+            "config": {
+                "profile": "wakaru-v3",
+                "prompt": "Génère la leçon.\n\nThèmes déjà traités (50 derniers) :\n{knownthemes}\n\nKanji déjà étudiés (100 derniers) :\n{knownkanji}\n\nRègles de grammaire déjà traitées (uid : nom) :\n{knowngrammar}\n\nMots déjà enseignés (200 derniers, écriture(lecture)) :\n{knownwords}",
+                "output": "lessontxt"
+            },
+            "on_success": "savetxt",
+            "on_error": "exit(0)"
+        },
+        "savetxt": {
+            "class": "DataViewFile",
+            "config": {
+                "input": "lessontxt",
+                "format": "txt",
+                "filename": "lesson_{run.datetime}.txt",
+                "output": "lessontxtfile"
+            },
+            "on_success": "storetxt",
+            "on_error": "exit(0)"
+        },
+        "storetxt": {
+            "class": "FileWriter",
+            "config": {
+                "source": "{lessontxtfile}",
+                "destination": "storage/wakaru2/",
+                "overwrite": false,
+                "output": "lessontxtstored"
+            },
+            "on_success": "repair",
+            "on_error": "exit(0)"
+        },
+        "repair": {
+            "class": "PythonScript",
+            "config": {
+                "script": "repair.py",
+                "params": {
+                    "input": "lessontxt",
+                    "repairs": "lessonrepairs"
+                }
+            },
+            "on_success": "checkformat",
+            "on_error": "checkformat"
+        },
+        "checkformat": {
+            "class": "JsonFormat",
+            "config": {
+                "input": "lessontxt",
+                "format_file": "lesson.schema.json",
+                "output": "lessonjson"
+            },
+            "on_success": "checklesson",
+            "on_error": "exit(0)"
+        },
+        "checklesson": {
+            "class": "PythonScript",
+            "config": {
+                "script": "checklesson.py",
+                "params": {
+                    "input": "lessonjson",
+                    "input_txt": "lessontxt",
+                    "issues": "lessonissues",
+                    "repairs": "lessonrepairs"
+                }
+            },
+            "on_success": "audit",
+            "on_error": "audit"
+        },
+        "audit": {
+            "class": "Agent",
+            "config": {
+                "profile": "wakaru-v3-review",
+                "prompt": "Leçon à auditer :\n\n{lessontxt}\n\nProblèmes déjà détectés automatiquement (dictionnaire), à corriger obligatoirement avec leurs répercussions :\n\n{lessonissues}",
+                "output": "lessonpatch"
+            },
+            "on_success": "saveaudit",
+            "on_error": "recheck"
+        },
+        "saveaudit": {
+            "class": "DataViewFile",
+            "config": {
+                "input": "lessonpatch",
+                "format": "txt",
+                "filename": "lesson_{run.datetime}_audit.txt",
+                "output": "lessonauditfile"
+            },
+            "on_success": "storeaudit",
+            "on_error": "applypatch"
+        },
+        "storeaudit": {
+            "class": "FileWriter",
+            "config": {
+                "source": "{lessonauditfile}",
+                "destination": "storage/wakaru2/",
+                "overwrite": false,
+                "output": "lessonauditstored"
+            },
+            "on_success": "applypatch",
+            "on_error": "applypatch"
+        },
+        "applypatch": {
+            "class": "PythonScript",
+            "config": {
+                "script": "applypatch.py",
+                "params": {
+                    "input": "lessonjson",
+                    "patch": "lessonpatch",
+                    "output": "lessonpatchedtxt",
+                    "report": "lessonpatchreport"
+                }
+            },
+            "on_success": "checkpatched",
+            "on_error": "recheck"
+        },
+        "checkpatched": {
+            "class": "JsonFormat",
+            "config": {
+                "input": "lessonpatchedtxt",
+                "format_file": "lesson.schema.json",
+                "output": "lessonjson"
+            },
+            "on_success": "recheck",
+            "on_error": "recheck"
+        },
+        "recheck": {
+            "class": "PythonScript",
+            "config": {
+                "script": "checklesson.py",
+                "params": {
+                    "input": "lessonjson",
+                    "input_txt": "lessontxt",
+                    "issues": "lessonissues"
+                }
+            },
+            "on_success": "savejson",
+            "on_error": "savejson"
+        },
+        "savejson": {
+            "class": "DataViewFile",
+            "config": {
+                "input": "lessonjson",
+                "format": "json",
+                "filename": "lesson_{run.datetime}.json",
+                "output": "lessonfile"
+            },
+            "on_success": "storejson",
+            "on_error": "exit(0)"
+        },
+        "storejson": {
+            "class": "FileWriter",
+            "config": {
+                "source": "{lessonfile}",
+                "destination": "storage/wakaru2/",
+                "overwrite": false,
+                "output": "lessonstored"
+            },
+            "on_success": "sendtowakaru",
+            "on_error": "exit(0)"
+        },
+        "sendtowakaru": {
+            "class": "ServiceMethod",
+            "config": {
+                "service": "wakaru",
+                "method": "call",
+                "params": {
+                    "method": "POST",
+                    "endpoint": "llm/createlesson",
+                    "input": "lessonjson",
+                    "output": "lessoncreated"
+                }
+            },
+            "on_success": "exit(1)",
+            "on_error": "exit(0)"
+        }
+    }
+}
