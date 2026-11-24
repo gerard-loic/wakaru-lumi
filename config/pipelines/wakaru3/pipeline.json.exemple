@@ -2,8 +2,8 @@
     "name": "Wakaru - creation d'une leçon (v2)",
     "services": {
         "wakaru": {
-            "login": "*************",
-            "password": "*************"
+            "login": "**********************",
+            "password": "**********************"
         }
     },
     "trigger": [
@@ -26,7 +26,18 @@
                     "kanji": "knownkanji",
                     "words": "knownwords",
                     "grammar_limit": 200,
-                    "grammar": "knowngrammar"
+                    "grammar": "knowngrammar",
+                    "theme_type": "themetype",
+                    "theme_types": [
+                        "un sujet ou événement de la pop culture japonaise (manga, anime, jeu vidéo, J-pop, cinéma, personnage ou série emblématique)",
+                        "une tradition de saison au Japon à la date courante",
+                        "une ville ou une région japonaise, emblématique ou moins connue",
+                        "un événement récent de l'actualité japonaise, obligatoirement positif (culture, sport, science, nature, festival…) : jamais de catastrophe, d'accident, de crime, de politique ou de sujet clivant",
+                        "un plat ou une spécialité culinaire japonaise, de saison ou emblématique",
+                        "une tradition, un art ou un savoir-faire japonais, emblématique ou moins connu",
+                        "la fête ou journée célébrée au Japon à la date courante (ou dans les jours qui suivent)",
+                        "un aspect de la vie quotidienne au Japon (transports, école, travail, logement, commerces, loisirs)"
+                    ]
                 }
             },
             "on_success": "generate",
@@ -36,7 +47,7 @@
             "class": "Agent",
             "config": {
                 "profile": "wakaru-v3",
-                "prompt": "Génère la leçon.\n\nThèmes déjà traités (50 derniers) :\n{knownthemes}\n\nKanji déjà étudiés (100 derniers) :\n{knownkanji}\n\nRègles de grammaire déjà traitées (uid : nom) :\n{knowngrammar}\n\nMots déjà enseignés (200 derniers, écriture(lecture)) :\n{knownwords}",
+                "prompt": "Génère la leçon.\n\nType de thème imposé pour cette leçon : {themetype}\n\nThèmes déjà traités (50 derniers) :\n{knownthemes}\n\nKanji déjà étudiés (100 derniers) :\n{knownkanji}\n\nRègles de grammaire déjà traitées (uid : nom) :\n{knowngrammar}\n\nMots déjà enseignés (200 derniers, écriture(lecture)) :\n{knownwords}",
                 "output": "lessontxt"
             },
             "on_success": "savetxt",

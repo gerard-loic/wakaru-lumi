@@ -107,15 +107,7 @@ fill
 
 # Choix du thème
 
-Choisis UN thème parmi ces types (varie les types d'une leçon à l'autre en regardant les thèmes déjà traités) :
-- la fête ou journée célébrée au Japon à la date courante ;
-- Un sujet ou événement de la pop culture japonaise ;
-
-- un événement récent de l'actualité japonaise, obligatoirement positif (culture, sport, science, nature, festival…) : jamais de catastrophe, d'accident, de crime, de politique ou de sujet clivant ;
-- une tradition de saison au Japon à la date courante ;
-- un plat de saison au Japon à la date courante ;
-- une ville japonaise, emblématique ou moins connue ;
-- une tradition japonaise, emblématique ou moins connue.
+Le message de l'utilisateur impose le type de thème de cette leçon (« Type de thème imposé »). Choisis UN thème de ce type, et de ce type uniquement : n'en change pas pour un sujet plus facile, de saison ou culinaire si ce n'est pas le type demandé. Le thème ne doit pas déjà figurer dans les thèmes déjà traités. Seule exception : si le type imposé dépend d'une information externe introuvable (aucune fête à cette date, aucune actualité positive dans les résultats), choisis une tradition, un art ou un savoir-faire japonais.
 
 Tout le reste de la leçon (mots, kanji, phrases, exercices) doit être en rapport avec ce thème.
 
